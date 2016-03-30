@@ -8,7 +8,13 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+#import <AVOSCloud/AVOSCloud.h>
+
+#import "HomePageViewController.h"
+#import "TypeClassViewController.h"
+#import "PersonalViewController.h"
+
+@interface AppDelegate () <UITabBarControllerDelegate>
 
 @end
 
@@ -17,6 +23,32 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    [AVOSCloud setApplicationId:@"oyYmswtCpYqftMEIOcJqTl7G-gzGzoHsz" clientKey:@"kcztrz7Sl6Ec4QocvSctes85"];
+    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    HomePageViewController * viewController1 = [[HomePageViewController alloc] init];
+    TypeClassViewController * viewController2 = [[TypeClassViewController alloc] init];
+    PersonalViewController * viewController3 = [[PersonalViewController alloc] init];
+    UINavigationController * naVC1 = [[UINavigationController alloc] initWithRootViewController:viewController1];
+    UINavigationController * naVC2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
+    UINavigationController * naVC3 = [[UINavigationController alloc] initWithRootViewController:viewController3];
+    
+    
+    UITabBarController * tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = @[naVC1, naVC2, naVC3];
+    
+    tabBarController.tabBar.barTintColor = [UIColor grayColor];
+    
+    self.window.rootViewController = tabBarController;
+    tabBarController.delegate = self;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
