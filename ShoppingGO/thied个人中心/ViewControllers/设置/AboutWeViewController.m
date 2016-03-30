@@ -1,18 +1,18 @@
 //
-//  PersonalViewController.m
-//  ShoppingGO
+//  AboutWeViewController.m
+//  share
 //
-//  Created by rimi on 16/3/28.
-//  Copyright © 2016年 rimi. All rights reserved.
+//  Created by rimi on 16/3/29.
+//  Copyright © 2016年 limiao. All rights reserved.
 //
 
-#import "PersonalViewController.h"
+#import "AboutWeViewController.h"
 
-@interface PersonalViewController ()
+@interface AboutWeViewController ()
 
 @end
 
-@implementation PersonalViewController
+@implementation AboutWeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

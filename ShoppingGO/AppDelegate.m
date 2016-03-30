@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 
 #import <AVOSCloud/AVOSCloud.h>
+#import "UMSocial.h"
 
+#import "UMSocialSinaSSOHandler.h"
 #import "HomePageViewController.h"
 #import "TypeClassViewController.h"
 #import "PersonalViewController.h"
