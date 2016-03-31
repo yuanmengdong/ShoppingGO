@@ -123,18 +123,29 @@
 }
 #pragma mark--getter
 -(UIButton *)shareButton{
+    
     if (!_shareButton) {
+        
         _shareButton=({
             
             UIButton * shareButton=[UIButton buttonWithType:UIButtonTypeCustom];
+            
             shareButton.frame=CGRectMake(0, 0, 300, 40);
+            
             shareButton.center=CGPointMake(self.view.center.x, self.view.center.y-100);
+            
             shareButton.layer.cornerRadius=20;
+            
             shareButton.layer.borderColor=[UIColor cyanColor].CGColor;
+            
             shareButton.layer.borderWidth=1;
+            
             shareButton.titleLabel.font=[UIFont systemFontOfSize:25];
+            
             [shareButton setTitle:@"分享" forState:UIControlStateNormal];
+            
             [shareButton setTitleColor:[UIColor colorWithRed:0.000 green:1.000 blue:0.502 alpha:1.000] forState:UIControlStateNormal];
+            
             [shareButton addTarget:self action:@selector(action_sharebutton) forControlEvents:UIControlEventTouchUpInside];
             
             
