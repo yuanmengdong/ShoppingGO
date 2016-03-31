@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VShopTableView : UIView
+@interface VShopTableView : UIView <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, retain)UITableView * tableView;
 
 @end

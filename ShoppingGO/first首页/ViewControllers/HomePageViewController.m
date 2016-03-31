@@ -10,6 +10,8 @@
 #import "titleSectionView.h"
 #import "TOPTableView.h"
 #import "ShowOneselfTableView.h"
+#import "VShopTableView.h"
+
 
 @interface HomePageViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -17,6 +19,10 @@
 @property (nonatomic, retain)titleSectionView * sectionView;
 @property (nonatomic, retain)TOPTableView * topTableView;
 @property (nonatomic, retain)ShowOneselfTableView * oneselfTableView;
+@property (nonatomic, retain)VShopTableView * vShopTableView;
+@property (nonatomic, retain)UIView * navigationBarView;
+@property (nonatomic, retain)UIButton * addButton;
+
 
 
 @end
@@ -26,6 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self initialiDataSource];
@@ -41,17 +49,27 @@
 -(void)initialiUserInterFace{
     
     
+    
     [self.view addSubview:self.scrollView];
     
     [self.view addSubview:self.sectionView];
     [self.scrollView addSubview:self.topTableView];
+    [self.scrollView addSubview:self.vShopTableView];
     [self.scrollView addSubview:self.oneselfTableView];
-    
+    [self.view addSubview:self.navigationBarView];
 }
 
 
 
 #pragma mark - getter
+
+-(UIView *)navigationBarView{
+    if (!_navigationBarView) {
+        _navigationBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
+        _navigationBarView.backgroundColor = [UIColor blueColor];
+    }
+    return _navigationBarView;
+}
 
 -(UIScrollView *)scrollView{
     if (!_scrollView) {
@@ -100,6 +118,16 @@
         _oneselfTableView.backgroundColor = [UIColor whiteColor];
     }
     return _oneselfTableView;
+}
+
+-(VShopTableView *)vShopTableView{
+    if (!_vShopTableView) {
+        _vShopTableView = [[VShopTableView alloc] initWithFrame:self.view.bounds];
+        //        _topTableView.bounds =
+        _vShopTableView.center = CGPointMake(self.scrollView.bounds.size.width * 1.5, self.scrollView.bounds.size.height / 2);
+        _vShopTableView.backgroundColor = [UIColor whiteColor];
+    }
+    return _vShopTableView;
 }
 
 
