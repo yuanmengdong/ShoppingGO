@@ -224,10 +224,14 @@
 -(UIImageView *)imageView{
     if (!_imageView) {
         _imageView=({
-            UIImageView * image=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"mike.jpeg"]];
+            UIImageView * image=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"mike2.jpeg"]];
+            
             image.frame=self.view.frame;
+            
             image.center=self.view.center;
+            
             image.contentMode = UIViewContentModeScaleAspectFill;
+            
             image;
         });
     }
