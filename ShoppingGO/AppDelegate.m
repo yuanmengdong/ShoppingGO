@@ -16,6 +16,7 @@
 #import "TypeClassViewController.h"
 #import "PersonalViewController.h"
 
+
 @interface AppDelegate () <UITabBarControllerDelegate>
 
 @end
@@ -28,6 +29,7 @@
     
     
     [AVOSCloud setApplicationId:@"oyYmswtCpYqftMEIOcJqTl7G-gzGzoHsz" clientKey:@"kcztrz7Sl6Ec4QocvSctes85"];
+    [UMSocialData setAppKey:@"56eb793e67e58e3608001c26"];
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"3921700954"
                                               secret:@"04b48b094faeb16683c32669824ebdad"
@@ -44,6 +46,7 @@
     UINavigationController * naVC3 = [[UINavigationController alloc] initWithRootViewController:viewController3];
     
     
+    
     UITabBarController * tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = @[naVC1, naVC2, naVC3];
     
@@ -51,6 +54,7 @@
     
     self.window.rootViewController = tabBarController;
     tabBarController.delegate = self;
+//    tabBarController.navigationController.viewControllers = @[]
     [self.window makeKeyAndVisible];
     
     return YES;

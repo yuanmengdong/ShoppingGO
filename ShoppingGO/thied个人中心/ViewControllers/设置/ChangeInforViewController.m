@@ -7,6 +7,7 @@
 //
 
 #import "ChangeInforViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
 
 @interface ChangeInforViewController ()<UITextFieldDelegate,UITextViewDelegate>
 
@@ -168,6 +169,13 @@
 }
 -(void)action_finishButton{
     
+    AVObject * user = [[AVObject alloc] initWithClassName:@"_user"];
+    [user setObject:self.username.text forKey:@"nickname"];
+    [user setObject:self.gendertext.text forKey:@"gender"];
+    [user setObject:self.phonetext.text forKey:@"phone"];
+    [user setObject:self.signtext.text forKey:@"signature"];
+    [user saveInBackground];
+    
     //上传数据
     
     
@@ -209,11 +217,7 @@
             button.frame=CGRectMake(0, 0, 250, 60);
             
             button.center=CGPointMake(self.view.bounds.size.width*0.5, self.view.bounds.size.height*0.87);
-//            button.layer.cornerRadius=10;
-//            
-//            button.layer.borderColor=[UIColor colorWithRed:0.502 green:0.000 blue:0.502 alpha:1.000].CGColor;
-//            
-//            button.layer.borderWidth=1;
+
             
             [button setTitle:@"♡Finished☆" forState:UIControlStateNormal];
             

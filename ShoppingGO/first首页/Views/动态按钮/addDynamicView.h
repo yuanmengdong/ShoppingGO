@@ -10,4 +10,7 @@
 
 @interface addDynamicView : UIView
 
+-(void)ahahahahahahhaahahahahah;
+
+
 @end

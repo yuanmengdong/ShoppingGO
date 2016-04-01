@@ -21,6 +21,15 @@
 		246A2FB01CAD1929003097BC /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 246A2FAC1CAD1929003097BC /* 4.jpg */; };
 		246A2FB11CAD1929003097BC /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 246A2FAD1CAD1929003097BC /* 7.png */; };
 		246A2FB21CAD1929003097BC /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 246A2FAE1CAD1929003097BC /* 8.png */; };
+		246A2FB61CAD425A003097BC /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 246A2FB51CAD425A003097BC /* Unknown.png */; };
+		246A2FB81CAD42A7003097BC /* QQ图片20160331182859.png in Resources */ = {isa = PBXBuildFile; fileRef = 246A2FB71CAD42A7003097BC /* QQ图片20160331182859.png */; };
+		246A2FC21CAD4612003097BC /* ShopShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A2FBC1CAD4612003097BC /* ShopShowViewController.m */; };
+		246A2FC31CAD4612003097BC /* ShopShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A2FBE1CAD4612003097BC /* ShopShowView.m */; };
+		246A2FC41CAD4612003097BC /* imageShopShowCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A2FC01CAD4612003097BC /* imageShopShowCollectionViewCell.m */; };
+		246A2FC51CAD4612003097BC /* imageShopShowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 246A2FC11CAD4612003097BC /* imageShopShowCollectionViewCell.xib */; };
+		246A2FC71CAD461A003097BC /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 246A2FC61CAD461A003097BC /* add.png */; };
+		246A2FCA1CAD4659003097BC /* PrivateDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A2FC91CAD4659003097BC /* PrivateDynamicViewController.m */; };
+		246A2FCC1CAD4660003097BC /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 246A2FCB1CAD4660003097BC /* ok.png */; };
 		24E807FE1CA26E440087F1F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E807FD1CA26E440087F1F1 /* main.m */; };
 		24E808011CA26E440087F1F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E808001CA26E440087F1F1 /* AppDelegate.m */; };
 		24E808041CA26E440087F1F1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E808031CA26E440087F1F1 /* ViewController.m */; };
@@ -145,6 +154,19 @@
 		246A2FAC1CAD1929003097BC /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		246A2FAD1CAD1929003097BC /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		246A2FAE1CAD1929003097BC /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
+		246A2FB51CAD425A003097BC /* Unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unknown.png; sourceTree = "<group>"; };
+		246A2FB71CAD42A7003097BC /* QQ图片20160331182859.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QQ图片20160331182859.png"; sourceTree = "<group>"; };
+		246A2FBB1CAD4612003097BC /* ShopShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopShowViewController.h; sourceTree = "<group>"; };
+		246A2FBC1CAD4612003097BC /* ShopShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopShowViewController.m; sourceTree = "<group>"; };
+		246A2FBD1CAD4612003097BC /* ShopShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopShowView.h; sourceTree = "<group>"; };
+		246A2FBE1CAD4612003097BC /* ShopShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopShowView.m; sourceTree = "<group>"; };
+		246A2FBF1CAD4612003097BC /* imageShopShowCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageShopShowCollectionViewCell.h; sourceTree = "<group>"; };
+		246A2FC01CAD4612003097BC /* imageShopShowCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageShopShowCollectionViewCell.m; sourceTree = "<group>"; };
+		246A2FC11CAD4612003097BC /* imageShopShowCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = imageShopShowCollectionViewCell.xib; sourceTree = "<group>"; };
+		246A2FC61CAD461A003097BC /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		246A2FC81CAD4659003097BC /* PrivateDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateDynamicViewController.h; sourceTree = "<group>"; };
+		246A2FC91CAD4659003097BC /* PrivateDynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateDynamicViewController.m; sourceTree = "<group>"; };
+		246A2FCB1CAD4660003097BC /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
 		24E807F91CA26E440087F1F1 /* ShoppingGO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingGO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E807FD1CA26E440087F1F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		24E807FF1CA26E440087F1F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -361,6 +383,29 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		246A2FB91CAD45E2003097BC /* 个人发送动态界面 */ = {
+			isa = PBXGroup;
+			children = (
+				246A2FC81CAD4659003097BC /* PrivateDynamicViewController.h */,
+				246A2FC91CAD4659003097BC /* PrivateDynamicViewController.m */,
+			);
+			path = "个人发送动态界面";
+			sourceTree = "<group>";
+		};
+		246A2FBA1CAD45E2003097BC /* V商发送动态界面 */ = {
+			isa = PBXGroup;
+			children = (
+				246A2FBB1CAD4612003097BC /* ShopShowViewController.h */,
+				246A2FBC1CAD4612003097BC /* ShopShowViewController.m */,
+				246A2FBD1CAD4612003097BC /* ShopShowView.h */,
+				246A2FBE1CAD4612003097BC /* ShopShowView.m */,
+				246A2FBF1CAD4612003097BC /* imageShopShowCollectionViewCell.h */,
+				246A2FC01CAD4612003097BC /* imageShopShowCollectionViewCell.m */,
+				246A2FC11CAD4612003097BC /* imageShopShowCollectionViewCell.xib */,
+			);
+			path = "V商发送动态界面";
+			sourceTree = "<group>";
+		};
 		24E807F01CA26E440087F1F1 = {
 			isa = PBXGroup;
 			children = (
@@ -423,6 +468,10 @@
 		24E808141CA270A70087F1F1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				246A2FCB1CAD4660003097BC /* ok.png */,
+				246A2FC61CAD461A003097BC /* add.png */,
+				246A2FB71CAD42A7003097BC /* QQ图片20160331182859.png */,
+				246A2FB51CAD425A003097BC /* Unknown.png */,
 				24F8AD141CA960ED00766E7C /* iconfont-xin.png */,
 				24F8AD031CA95C5A00766E7C /* 1001.jpg */,
 				24F8AD041CA95C5A00766E7C /* 1006.jpg */,
@@ -472,6 +521,8 @@
 		24E808171CA270A70087F1F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				246A2FB91CAD45E2003097BC /* 个人发送动态界面 */,
+				246A2FBA1CAD45E2003097BC /* V商发送动态界面 */,
 				246A2F951CAD0CB5003097BC /* 动态按钮 */,
 				24F8ACF61CA95A6400766E7C /* 步行微街 */,
 				24F8ACF21CA9558400766E7C /* 个人秀 */,
@@ -891,10 +942,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				246A2FB01CAD1929003097BC /* 4.jpg in Resources */,
+				246A2FB81CAD42A7003097BC /* QQ图片20160331182859.png in Resources */,
 				24E9E41B1CABD496006B9534 /* AuthorizationViewController.xib in Resources */,
 				24E9E3EE1CABD264006B9534 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				24F8ACEC1CA94E4700766E7C /* 2.jpg in Resources */,
 				24E8080C1CA26E440087F1F1 /* LaunchScreen.storyboard in Resources */,
+				246A2FB61CAD425A003097BC /* Unknown.png in Resources */,
 				24E9E3E51CABD264006B9534 /* UMSLoginViewController.xib in Resources */,
 				24E9E3DD1CABD264006B9534 /* mike2.jpeg in Resources */,
 				24E9E3F21CABD264006B9534 /* iOS-social-releasenote.html in Resources */,
@@ -915,6 +968,7 @@
 				24E9E3EB1CABD264006B9534 /* WeiboSDK.bundle in Resources */,
 				24E9E3FB1CABD264006B9534 /* ios-social-sdk-socialbar.html in Resources */,
 				24E9E3D71CABD264006B9534 /* d8f21ca4c203d22f44b224b1f1cb2b90.jpeg in Resources */,
+				246A2FC71CAD461A003097BC /* add.png in Resources */,
 				24F8AD0E1CA95C5A00766E7C /* 1003.jpg in Resources */,
 				246A25F11CAD0371003097BC /* classification.png in Resources */,
 				24E9E3DC1CABD264006B9534 /* mike1.jpeg in Resources */,
@@ -932,6 +986,7 @@
 				24E9E3E11CABD264006B9534 /* UMSCommentInputController.xib in Resources */,
 				24E9E3F11CABD264006B9534 /* iOS-social-analytics-releasenote.html in Resources */,
 				24E9E3FC1CABD264006B9534 /* markdown.css in Resources */,
+				246A2FCC1CAD4660003097BC /* ok.png in Resources */,
 				24E9E3F91CABD264006B9534 /* ios-social-sdk-share-detail.html in Resources */,
 				24E9E3D91CABD264006B9534 /* liyifeng.jpg in Resources */,
 				24E9E3F51CABD264006B9534 /* ios-social-sdk-like.html in Resources */,
@@ -941,6 +996,7 @@
 				24E9E3D41CABD264006B9534 /* 3c1e3ea135ba57205adc9f5a92f9ae4c.jpg in Resources */,
 				24F8ACD71CA92F9A00766E7C /* titlebutton_31.png in Resources */,
 				246A2FA61CAD1552003097BC /* u=4226644394,354881513&fm=21&gp=0.jpg in Resources */,
+				246A2FC51CAD4612003097BC /* imageShopShowCollectionViewCell.xib in Resources */,
 				24E9E3E21CABD264006B9534 /* UMSCommentInputControlleriPad.xib in Resources */,
 				24E9E3F41CABD264006B9534 /* ios-social-sdk-comment-quick.html in Resources */,
 				24E9E3F31CABD264006B9534 /* ios-social-sdk-comment-detail.html in Resources */,
@@ -1014,6 +1070,7 @@
 				24E9E41D1CABD496006B9534 /* SettingViewController.m in Sources */,
 				24F8ACE31CA936CC00766E7C /* UserModel.m in Sources */,
 				24E9E4191CABD496006B9534 /* AboutWeViewController.m in Sources */,
+				246A2FC31CAD4612003097BC /* ShopShowView.m in Sources */,
 				24E808011CA26E440087F1F1 /* AppDelegate.m in Sources */,
 				24F8ACF51CA95A3C00766E7C /* ShowOneselfTableView.m in Sources */,
 				246A2FA11CAD1516003097BC /* Login.m in Sources */,
@@ -1021,9 +1078,12 @@
 				246A25EE1CACFFA1003097BC /* PhotoCollectionViewCell.m in Sources */,
 				246A2FA21CAD1516003097BC /* newHead.m in Sources */,
 				246A2FA91CAD15DF003097BC /* Ziliao.m in Sources */,
+				246A2FC21CAD4612003097BC /* ShopShowViewController.m in Sources */,
 				24E807FE1CA26E440087F1F1 /* main.m in Sources */,
 				24F8AD131CA95DAD00766E7C /* UserModel3.m in Sources */,
+				246A2FCA1CAD4659003097BC /* PrivateDynamicViewController.m in Sources */,
 				24F8AD021CA95B1600766E7C /* VShopTableViewCell.m in Sources */,
+				246A2FC41CAD4612003097BC /* imageShopShowCollectionViewCell.m in Sources */,
 				24E9E41C1CABD496006B9534 /* ChangeInforViewController.m in Sources */,
 				246A2F981CAD0D15003097BC /* addDynamicView.m in Sources */,
 				246A25ED1CACFFA1003097BC /* PhotoCollectionView.m in Sources */,

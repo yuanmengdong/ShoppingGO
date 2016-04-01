@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
 
 @interface RegisterViewController ()<UITextFieldDelegate>
 @property(nonatomic,strong)UITextField * userPhone;
@@ -49,21 +50,31 @@
     
 }
 #pragma mark--action
--(void)action_verifybutton{
-    
-   
+
+-(void)action_backLogin{
+    AVObject * User = [AVObject objectWithClassName:@"_User"];
+    [User setObject:self.userPhone.text forKey:@"username"];
+    [User setObject:self.verifynumber.text forKey:@"password"];
+    [User saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            
+            NSDictionary * dictionary = @{@"nameTextField": self.userPhone.text , @"passwordTextField": self.verifynumber.text};
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"changeTextField" object:nil userInfo:dictionary];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
     
     
     
     
     
 }
--(void)action_backLogin{
+-(void)action_backButton{
     
-   
-    
-    
-    
+    [self.navigationController popViewControllerAnimated:YES];
     
     
 }
@@ -154,42 +165,42 @@
     }
     return _verifynumber;
 }
--(UIButton *)verifyButton{
-    if (!_verifyButton) {
-        _verifyButton=({
-            UIButton * button=[UIButton buttonWithType:UIButtonTypeCustom];
-            
-            button.frame=CGRectMake(0, 0, 200, 40);
-            
-            button.center=CGPointMake(self.view.center.x-45, self.view.bounds.size.height* 0.615);
-            
-            button.layer.cornerRadius=10;
-            
-//            button.layer.borderColor=[UIColor colorWithRed:0.502 green:0.000 blue:0.502 alpha:1.000].CGColor;
+//-(UIButton *)verifyButton{
+//    if (!_verifyButton) {
+//        _verifyButton=({
+//            UIButton * button=[UIButton buttonWithType:UIButtonTypeCustom];
 //            
-//            button.layer.borderWidth=2;
-            
-            [button setTitle:@"获取验证码" forState:UIControlStateNormal];
-            
-            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            
-            button.backgroundColor=[UIColor orangeColor];
-            
-            [button addTarget:self action:@selector(action_verifybutton) forControlEvents:UIControlEventTouchUpInside];
-            
-            
-            
-            button;
-            
-            
-        });
-    }
-    
-    
-    
-    
-    return _verifyButton;
-}
+//            button.frame=CGRectMake(0, 0, 200, 40);
+//            
+//            button.center=CGPointMake(self.view.center.x-45, self.view.bounds.size.height* 0.615);
+//            
+//            button.layer.cornerRadius=10;
+//            
+////            button.layer.borderColor=[UIColor colorWithRed:0.502 green:0.000 blue:0.502 alpha:1.000].CGColor;
+////            
+////            button.layer.borderWidth=2;
+//            
+//            [button setTitle:@"获取验证码" forState:UIControlStateNormal];
+//            
+//            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//            
+//            button.backgroundColor=[UIColor orangeColor];
+//            
+//            [button addTarget:self action:@selector(action_verifybutton) forControlEvents:UIControlEventTouchUpInside];
+//            
+//            
+//            
+//            button;
+//            
+//            
+//        });
+//    }
+//    
+//    
+//    
+//    
+//    return _verifyButton;
+//}
 -(UIButton *)registerButton{
     if (!_registerButton) {
         _registerButton=({
