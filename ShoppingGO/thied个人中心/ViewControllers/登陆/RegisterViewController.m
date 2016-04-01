@@ -72,12 +72,7 @@
     
     
 }
--(void)action_backButton{
-    
-    [self.navigationController popViewControllerAnimated:YES];
-    
-    
-}
+
 -(void)action_backButton{
     
     [self.navigationController popViewControllerAnimated:YES];

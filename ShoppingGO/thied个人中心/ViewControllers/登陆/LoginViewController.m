@@ -123,7 +123,7 @@
         _name = ({
             UITextField * name=[[UITextField alloc]initWithFrame:CGRectMake(0, 0, 300, 40)];
             
-            name.textColor=[UIColor whiteColor];
+//            name.textColor=[UIColor whiteColor];
             
             name.placeholder=@"请输入用户名";
             
@@ -161,7 +161,7 @@
             
             UITextField * password=[[UITextField alloc]initWithFrame:CGRectMake(0, 0, 300, 40)];
             
-            password.textColor=[UIColor whiteColor];
+//            password.textColor=[UIColor whiteColor];
             
             password.placeholder=@"请输入密码";
             
