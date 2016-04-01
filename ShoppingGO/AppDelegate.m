@@ -29,7 +29,9 @@
     
     [AVOSCloud setApplicationId:@"oyYmswtCpYqftMEIOcJqTl7G-gzGzoHsz" clientKey:@"kcztrz7Sl6Ec4QocvSctes85"];
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
+    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"3921700954"
+                                              secret:@"04b48b094faeb16683c32669824ebdad"
+                                         RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
     
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -75,5 +77,12 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    BOOL result = [UMSocialSnsService handleOpenURL:url];
+    if (result == FALSE) {
+        //调用其他SDK，例如支付宝SDK等
+    }
+    return result;
+}
 @end

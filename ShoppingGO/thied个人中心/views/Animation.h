@@ -14,7 +14,9 @@
 
 - (CABasicAnimation *)zoomFromValue:(NSValue *)from toValue:(NSValue *)to beginTime:(CFTimeInterval)begin duration:(CFTimeInterval)duration keep:(BOOL)keep;
 
-- (CABasicAnimation *)boundsFromValue:(NSValue *)from toValue:(NSValue *)to beginTime:(CFTimeInterval)begin duration:(CFTimeInterval)duration keep:(BOOL)keep;
+- (CABasicAnimation *)boundsFromValue:(CGRect)from toValue:(CGRect)to beginTime:(CFTimeInterval)begin duration:(CFTimeInterval)duration keep:(BOOL)keep;
 
 - (CABasicAnimation *)spinFromValue:(NSValue *)from toValue:(NSValue *)to beginTime:(CFTimeInterval)begin duration:(CFTimeInterval)duration keep:(BOOL)keep;
+
+- (CABasicAnimation *)alphaFromValue:(CGFloat)from toValue:(CGFloat)to beginTime:(CFTimeInterval)begin duration:(CFTimeInterval)duration keep:(BOOL)keep;
 @end

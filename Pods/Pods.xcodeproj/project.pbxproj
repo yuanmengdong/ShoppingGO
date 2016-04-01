@@ -1,0 +1,368 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28005C80D2DDD16395B0235E4E6B75E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8AF68928B288E1233EEBF409E73733 /* Foundation.framework */; };
+		98CF453A66612507B8078131EA335F66 /* Pods-ShoppingGO-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D75473005310C480FBBBD36AAB61FE1 /* Pods-ShoppingGO-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		01722494426A6F644E94DA4A4FDDE39A /* AVQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVQuery.h; sourceTree = "<group>"; };
+		02BF389F508BA3BD54CFBEB1C1089CE1 /* Pods-ShoppingGO-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ShoppingGO-acknowledgements.plist"; sourceTree = "<group>"; };
+		05607338E97F4A457C0E24DF435BC4BC /* AVCloudQueryResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVCloudQueryResult.h; sourceTree = "<group>"; };
+		096B2335C398B31E1BF2A1F6A5859DBB /* AVSignature.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSignature.h; sourceTree = "<group>"; };
+		0E75D26002491CDE2434EB3C0643E7B5 /* AVHistoryMessageQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVHistoryMessageQuery.h; sourceTree = "<group>"; };
+		1296EE5B0370DB8166F257F30B0FBA0C /* AVUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVUser.h; sourceTree = "<group>"; };
+		136B7DF8ECFA7A2AC7687922A967BB38 /* AVConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVConstants.h; sourceTree = "<group>"; };
+		1D17EC45354EE95BA0948F2D0AFD7CA9 /* AVRole.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVRole.h; sourceTree = "<group>"; };
+		2278B5AFD05040ED45A31338B49DA36C /* AVFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVFile.h; sourceTree = "<group>"; };
+		2DCA9D75B7672C9C92FCF33C29B3FA8B /* AVAnonymousUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVAnonymousUtils.h; sourceTree = "<group>"; };
+		4947FB0BAD660536456FB43D9DA732D5 /* AVOSCloud.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVOSCloud.h; sourceTree = "<group>"; };
+		4F8AF68928B288E1233EEBF409E73733 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		55F91A9089DDF9A367341C4316618146 /* AVSearchQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSearchQuery.h; sourceTree = "<group>"; };
+		566669C2C29D0A8ED44DC2D497C66569 /* Pods-ShoppingGO-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ShoppingGO-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5F822A55A7876B0FF6A386DB62CFF535 /* AVHistoryMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVHistoryMessage.h; sourceTree = "<group>"; };
+		62D56EDEF9CFD74FD42CDC205A37681E /* AVStatus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVStatus.h; sourceTree = "<group>"; };
+		712EC93C6716C7453767DBCB1206065A /* AVFileQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVFileQuery.h; sourceTree = "<group>"; };
+		79AF7B797FD13BC6B8F03495C3171CEA /* AVAvailability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVAvailability.h; sourceTree = "<group>"; };
+		7D9A97D803F1F2FCD759DF7A756169A4 /* AVGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVGroup.h; sourceTree = "<group>"; };
+		81BD66544BF070C2BC7997726CA10798 /* AVSaveOption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSaveOption.h; sourceTree = "<group>"; };
+		8B5E0AFB6AAC3A894CFC8F3638AAD5FD /* AVCloud.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVCloud.h; sourceTree = "<group>"; };
+		8DFECA42B2E8510E6C2BB3927A1AC17E /* AVInstallation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVInstallation.h; sourceTree = "<group>"; };
+		92A3207667A0CA2B2B0AADE43FBABA03 /* AVGeoPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVGeoPoint.h; sourceTree = "<group>"; };
+		93328E6B318447441686330F47055565 /* AVLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVLogger.h; sourceTree = "<group>"; };
+		996C29BD5CE3F2BAC9F294BAD901F7B7 /* AVSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSession.h; sourceTree = "<group>"; };
+		9CFCCF7BCAE5A2A4EEFD56DFEB2EBB12 /* libAVOSCloud.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libAVOSCloud.a; sourceTree = "<group>"; };
+		9D75473005310C480FBBBD36AAB61FE1 /* Pods-ShoppingGO-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ShoppingGO-dummy.m"; sourceTree = "<group>"; };
+		A172CAEEE4327DFD6C057C24434035B5 /* Pods-ShoppingGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ShoppingGO.debug.xcconfig"; sourceTree = "<group>"; };
+		A374F214BC8272A6B04BFA7C1CE43723 /* AVSubclassing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSubclassing.h; sourceTree = "<group>"; };
+		AF4770105DF81CC85797F8C909FAB7D4 /* AVPush.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVPush.h; sourceTree = "<group>"; };
+		B738D4BDAF319A2F78030DDD44AB6FDE /* AVAnalytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVAnalytics.h; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BA85F3FC5437565FA4ABF6DDA0B67784 /* Pods-ShoppingGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ShoppingGO.release.xcconfig"; sourceTree = "<group>"; };
+		C1CB189EBAB2668039C0BF278FB4A9BE /* AVSearchSortBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSearchSortBuilder.h; sourceTree = "<group>"; };
+		D39ED79C91FF80FD33B1B5F051A60302 /* AVObject+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AVObject+Subclass.h"; sourceTree = "<group>"; };
+		E0FF6AFE2302E9F0C4A122E540C9E114 /* AVACL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVACL.h; sourceTree = "<group>"; };
+		E7605D1956069988429827C425F6D768 /* Pods-ShoppingGO-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ShoppingGO-resources.sh"; sourceTree = "<group>"; };
+		EBC3DC1E47AADF070697131ADB7339B4 /* AVMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVMessage.h; sourceTree = "<group>"; };
+		EC556D67F4925086AEBD33DB09278143 /* libPods-ShoppingGO.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShoppingGO.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFB6156347F513539ED83D6588E1CD4F /* AVObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVObject.h; sourceTree = "<group>"; };
+		F07EDCD130D821FEA2A2D0ED01C6361D /* AVRelation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVRelation.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FBDC4D8679000A6215565C4A5A573B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28005C80D2DDD16395B0235E4E6B75E6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14690CA4EF0B6EF17C1BD9CE61AFAD79 /* Pods-ShoppingGO */ = {
+			isa = PBXGroup;
+			children = (
+				566669C2C29D0A8ED44DC2D497C66569 /* Pods-ShoppingGO-acknowledgements.markdown */,
+				02BF389F508BA3BD54CFBEB1C1089CE1 /* Pods-ShoppingGO-acknowledgements.plist */,
+				9D75473005310C480FBBBD36AAB61FE1 /* Pods-ShoppingGO-dummy.m */,
+				E7605D1956069988429827C425F6D768 /* Pods-ShoppingGO-resources.sh */,
+				A172CAEEE4327DFD6C057C24434035B5 /* Pods-ShoppingGO.debug.xcconfig */,
+				BA85F3FC5437565FA4ABF6DDA0B67784 /* Pods-ShoppingGO.release.xcconfig */,
+			);
+			name = "Pods-ShoppingGO";
+			path = "Target Support Files/Pods-ShoppingGO";
+			sourceTree = "<group>";
+		};
+		35D88D1E99EB42F0AE08F3C354F73529 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				45971A45222E3DC7A2DC586668BE3096 /* AVOSCloud */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		42D5565BD77E0859E81CA00336BD7D9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CFCCF7BCAE5A2A4EEFD56DFEB2EBB12 /* libAVOSCloud.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45971A45222E3DC7A2DC586668BE3096 /* AVOSCloud */ = {
+			isa = PBXGroup;
+			children = (
+				E0FF6AFE2302E9F0C4A122E540C9E114 /* AVACL.h */,
+				B738D4BDAF319A2F78030DDD44AB6FDE /* AVAnalytics.h */,
+				2DCA9D75B7672C9C92FCF33C29B3FA8B /* AVAnonymousUtils.h */,
+				79AF7B797FD13BC6B8F03495C3171CEA /* AVAvailability.h */,
+				8B5E0AFB6AAC3A894CFC8F3638AAD5FD /* AVCloud.h */,
+				05607338E97F4A457C0E24DF435BC4BC /* AVCloudQueryResult.h */,
+				136B7DF8ECFA7A2AC7687922A967BB38 /* AVConstants.h */,
+				2278B5AFD05040ED45A31338B49DA36C /* AVFile.h */,
+				712EC93C6716C7453767DBCB1206065A /* AVFileQuery.h */,
+				92A3207667A0CA2B2B0AADE43FBABA03 /* AVGeoPoint.h */,
+				7D9A97D803F1F2FCD759DF7A756169A4 /* AVGroup.h */,
+				5F822A55A7876B0FF6A386DB62CFF535 /* AVHistoryMessage.h */,
+				0E75D26002491CDE2434EB3C0643E7B5 /* AVHistoryMessageQuery.h */,
+				8DFECA42B2E8510E6C2BB3927A1AC17E /* AVInstallation.h */,
+				93328E6B318447441686330F47055565 /* AVLogger.h */,
+				EBC3DC1E47AADF070697131ADB7339B4 /* AVMessage.h */,
+				4947FB0BAD660536456FB43D9DA732D5 /* AVOSCloud.h */,
+				EFB6156347F513539ED83D6588E1CD4F /* AVObject.h */,
+				D39ED79C91FF80FD33B1B5F051A60302 /* AVObject+Subclass.h */,
+				AF4770105DF81CC85797F8C909FAB7D4 /* AVPush.h */,
+				01722494426A6F644E94DA4A4FDDE39A /* AVQuery.h */,
+				F07EDCD130D821FEA2A2D0ED01C6361D /* AVRelation.h */,
+				1D17EC45354EE95BA0948F2D0AFD7CA9 /* AVRole.h */,
+				81BD66544BF070C2BC7997726CA10798 /* AVSaveOption.h */,
+				55F91A9089DDF9A367341C4316618146 /* AVSearchQuery.h */,
+				C1CB189EBAB2668039C0BF278FB4A9BE /* AVSearchSortBuilder.h */,
+				996C29BD5CE3F2BAC9F294BAD901F7B7 /* AVSession.h */,
+				096B2335C398B31E1BF2A1F6A5859DBB /* AVSignature.h */,
+				62D56EDEF9CFD74FD42CDC205A37681E /* AVStatus.h */,
+				A374F214BC8272A6B04BFA7C1CE43723 /* AVSubclassing.h */,
+				1296EE5B0370DB8166F257F30B0FBA0C /* AVUser.h */,
+				42D5565BD77E0859E81CA00336BD7D9D /* Frameworks */,
+			);
+			path = AVOSCloud;
+			sourceTree = "<group>";
+		};
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				4F8AF68928B288E1233EEBF409E73733 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7C04B2A599C296493002D9866A861EA3 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				14690CA4EF0B6EF17C1BD9CE61AFAD79 /* Pods-ShoppingGO */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				35D88D1E99EB42F0AE08F3C354F73529 /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				7C04B2A599C296493002D9866A861EA3 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC556D67F4925086AEBD33DB09278143 /* libPods-ShoppingGO.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB2F07ABC7B37DEFE1E564D1D70A9995 /* Pods-ShoppingGO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3753FB63303193D5030A4358C7A59D51 /* Build configuration list for PBXNativeTarget "Pods-ShoppingGO" */;
+			buildPhases = (
+				FD3A6F51C3A0096524518898A07C2BF3 /* Sources */,
+				3FBDC4D8679000A6215565C4A5A573B3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-ShoppingGO";
+			productName = "Pods-ShoppingGO";
+			productReference = EC556D67F4925086AEBD33DB09278143 /* libPods-ShoppingGO.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB2F07ABC7B37DEFE1E564D1D70A9995 /* Pods-ShoppingGO */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD3A6F51C3A0096524518898A07C2BF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98CF453A66612507B8078131EA335F66 /* Pods-ShoppingGO-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		640AEB75C4239029FFF0FC2B1CCD69A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A172CAEEE4327DFD6C057C24434035B5 /* Pods-ShoppingGO.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AEB3BAC35EC17688197F261899D5B2DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA85F3FC5437565FA4ABF6DDA0B67784 /* Pods-ShoppingGO.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C074F63C9EE7CB4D8C618390A32CEC35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E43846B588E1892F3093F3B7082B6DFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C074F63C9EE7CB4D8C618390A32CEC35 /* Debug */,
+				E43846B588E1892F3093F3B7082B6DFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3753FB63303193D5030A4358C7A59D51 /* Build configuration list for PBXNativeTarget "Pods-ShoppingGO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				640AEB75C4239029FFF0FC2B1CCD69A4 /* Debug */,
+				AEB3BAC35EC17688197F261899D5B2DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -19,6 +19,8 @@
 
 @property(nonatomic,strong)UIImageView * imageView;
 
+@property(nonatomic,strong)UIButton * back;
+
 //毛玻璃
 @property(nonatomic,strong)UIVisualEffectView *effectView;
 
@@ -42,8 +44,7 @@
     
     [self.view addSubview:self.verifynumber];
     
-
-    
+    [self.view addSubview:self.back];
     [self.view addSubview:self.registerButton];
     
 }
@@ -66,7 +67,12 @@
     
     
 }
+-(void)action_backButton{
     
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    
+}
     
 #pragma mark--delegate
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -258,5 +264,29 @@
     
     return _imageView;
 }
-
+-(UIButton * )back{
+    if (!_back) {
+        _back=({
+            
+            UIButton *  button=[UIButton buttonWithType:UIButtonTypeCustom];
+            button.frame=CGRectMake(0, 0, 200, 60);
+            button.center=CGPointMake(self.view.bounds.size.width*0.2, self.view.bounds.size.height*0.1);
+            
+            
+            button.titleLabel.font=[UIFont fontWithName:@"TrebuchetMS" size:25];
+            
+            [button setTitle:@"b⃣ a⃣ c⃣ k⃣" forState:UIControlStateNormal];
+            
+            [button setTitleColor:[UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000] forState:UIControlStateNormal];
+            [button addTarget:self action:@selector(action_backButton) forControlEvents:UIControlEventTouchUpInside];
+            
+            
+            button;
+            
+        });
+    }
+    
+    
+    return _back;
+}
 @end

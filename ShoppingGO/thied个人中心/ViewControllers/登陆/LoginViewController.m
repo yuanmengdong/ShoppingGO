@@ -52,6 +52,9 @@
     
     //登陆
     
+    //登陆成功，，传值并推送
+    [self.navigationController popViewControllerAnimated:YES];
+    
     
     
     
