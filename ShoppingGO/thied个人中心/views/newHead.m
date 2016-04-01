@@ -66,9 +66,12 @@
     
     NSDictionary * dictionary = @{@"text": _imageView.image};
     [[NSNotificationCenter defaultCenter] postNotificationName:@"change" object:nil userInfo:dictionary];
-    [self.navigationController popToViewController:self.navigationController.viewControllers[1] animated:NO];
     
     
+    
+    [self.navigationController popViewControllerAnimated:NO];
+    
+//    [self dismissViewControllerAnimated:NO completion:nil];
 //    ViewController * view1 = [[ViewController alloc]init];
 //    
 //    view1.head.image = self.imageView.image;

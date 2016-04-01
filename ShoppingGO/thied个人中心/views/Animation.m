@@ -42,15 +42,15 @@
     return zoom;
 }
 
-- (CABasicAnimation *)boundsFromValue:(NSValue *)from toValue:(NSValue *)to beginTime:(CFTimeInterval)begin duration:(CFTimeInterval)duration keep:(BOOL)keep
+- (CABasicAnimation *)boundsFromValue:(CGRect)from toValue:(CGRect)to beginTime:(CFTimeInterval)begin duration:(CFTimeInterval)duration keep:(BOOL)keep
 {
     CABasicAnimation * bounds = [CABasicAnimation animationWithKeyPath:@"bounds"];
     bounds.beginTime = begin;
-    bounds.fromValue = from;
+    bounds.fromValue = [NSValue valueWithCGRect:from];
     
     bounds.duration = duration;
     
-    bounds.toValue = to;
+    bounds.toValue = [NSValue valueWithCGRect:to];
     
     bounds.removedOnCompletion = keep;
     bounds.fillMode = kCAFillModeForwards;
@@ -67,7 +67,26 @@
     
     spin.duration = duration;
     
+    spin.duration = duration;
+    
     spin.toValue = to;
+    
+    spin.removedOnCompletion = keep;
+    spin.fillMode = kCAFillModeForwards;
+    
+    return spin;
+}
+
+- (CABasicAnimation *)alphaFromValue:(CGFloat)from toValue:(CGFloat)to beginTime:(CFTimeInterval)begin duration:(CFTimeInterval)duration keep:(BOOL)keep
+{
+    CABasicAnimation * spin = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    
+    spin.beginTime = begin;
+    spin.fromValue = [NSNumber numberWithFloat:from];
+    
+    spin.duration = duration;
+    
+    spin.toValue = [NSNumber numberWithFloat:to];
     
     spin.removedOnCompletion = keep;
     spin.fillMode = kCAFillModeForwards;

@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
 
 @interface RegisterViewController ()<UITextFieldDelegate>
 @property(nonatomic,strong)UITextField * userPhone;
@@ -18,6 +19,8 @@
 @property(nonatomic,strong)UIButton * registerButton;
 
 @property(nonatomic,strong)UIImageView * imageView;
+
+@property(nonatomic,strong)UIButton * back;
 
 //毛玻璃
 @property(nonatomic,strong)UIVisualEffectView *effectView;
@@ -42,31 +45,39 @@
     
     [self.view addSubview:self.verifynumber];
     
-
-    
+    [self.view addSubview:self.back];
     [self.view addSubview:self.registerButton];
     
 }
 #pragma mark--action
--(void)action_verifybutton{
-    
-   
-    
-    
-    
-    
-    
-}
+
 -(void)action_backLogin{
-    
-   
+    AVObject * User = [AVObject objectWithClassName:@"_User"];
+    [User setObject:self.userPhone.text forKey:@"username"];
+    [User setObject:self.verifynumber.text forKey:@"password"];
+    [User saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            
+            NSDictionary * dictionary = @{@"nameTextField": self.userPhone.text , @"passwordTextField": self.verifynumber.text};
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"changeTextField" object:nil userInfo:dictionary];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        else{
+            NSLog(@"失败");
+        }
+    }];
     
     
     
     
     
 }
+-(void)action_backButton{
     
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    
+}
     
 #pragma mark--delegate
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -148,42 +159,42 @@
     }
     return _verifynumber;
 }
--(UIButton *)verifyButton{
-    if (!_verifyButton) {
-        _verifyButton=({
-            UIButton * button=[UIButton buttonWithType:UIButtonTypeCustom];
-            
-            button.frame=CGRectMake(0, 0, 200, 40);
-            
-            button.center=CGPointMake(self.view.center.x-45, self.view.bounds.size.height* 0.615);
-            
-            button.layer.cornerRadius=10;
-            
-//            button.layer.borderColor=[UIColor colorWithRed:0.502 green:0.000 blue:0.502 alpha:1.000].CGColor;
+//-(UIButton *)verifyButton{
+//    if (!_verifyButton) {
+//        _verifyButton=({
+//            UIButton * button=[UIButton buttonWithType:UIButtonTypeCustom];
 //            
-//            button.layer.borderWidth=2;
-            
-            [button setTitle:@"获取验证码" forState:UIControlStateNormal];
-            
-            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            
-            button.backgroundColor=[UIColor orangeColor];
-            
-            [button addTarget:self action:@selector(action_verifybutton) forControlEvents:UIControlEventTouchUpInside];
-            
-            
-            
-            button;
-            
-            
-        });
-    }
-    
-    
-    
-    
-    return _verifyButton;
-}
+//            button.frame=CGRectMake(0, 0, 200, 40);
+//            
+//            button.center=CGPointMake(self.view.center.x-45, self.view.bounds.size.height* 0.615);
+//            
+//            button.layer.cornerRadius=10;
+//            
+////            button.layer.borderColor=[UIColor colorWithRed:0.502 green:0.000 blue:0.502 alpha:1.000].CGColor;
+////            
+////            button.layer.borderWidth=2;
+//            
+//            [button setTitle:@"获取验证码" forState:UIControlStateNormal];
+//            
+//            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//            
+//            button.backgroundColor=[UIColor orangeColor];
+//            
+//            [button addTarget:self action:@selector(action_verifybutton) forControlEvents:UIControlEventTouchUpInside];
+//            
+//            
+//            
+//            button;
+//            
+//            
+//        });
+//    }
+//    
+//    
+//    
+//    
+//    return _verifyButton;
+//}
 -(UIButton *)registerButton{
     if (!_registerButton) {
         _registerButton=({
@@ -258,5 +269,29 @@
     
     return _imageView;
 }
-
+-(UIButton * )back{
+    if (!_back) {
+        _back=({
+            
+            UIButton *  button=[UIButton buttonWithType:UIButtonTypeCustom];
+            button.frame=CGRectMake(0, 0, 200, 60);
+            button.center=CGPointMake(self.view.bounds.size.width*0.2, self.view.bounds.size.height*0.1);
+            
+            
+            button.titleLabel.font=[UIFont fontWithName:@"TrebuchetMS" size:25];
+            
+            [button setTitle:@"b⃣ a⃣ c⃣ k⃣" forState:UIControlStateNormal];
+            
+            [button setTitleColor:[UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000] forState:UIControlStateNormal];
+            [button addTarget:self action:@selector(action_backButton) forControlEvents:UIControlEventTouchUpInside];
+            
+            
+            button;
+            
+        });
+    }
+    
+    
+    return _back;
+}
 @end

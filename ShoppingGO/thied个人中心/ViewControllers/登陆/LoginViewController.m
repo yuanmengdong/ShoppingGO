@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
+
 @interface LoginViewController ()<UITextFieldDelegate>
 
 @property(nonatomic,strong)UITextField * name;
@@ -25,6 +27,25 @@
 @end
 
 @implementation LoginViewController
+
+//{
+//    //第三步：移除通知
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"changeTextField" object:nil];
+//}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeLabelText:) name:@"changeTextField" object:nil];
+    }
+    return self;
+}
+
+-(void)changeLabelText:(NSNotification *)notification{
+    self.name.text = notification.userInfo[@"nameTextField"];
+    self.password.text = notification.userInfo[@"passwordTextField"];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,6 +72,21 @@
 -(void)action_loginbutton{
     
     //登陆
+    [AVUser logInWithUsernameInBackground:self.name.text password:self.password.text block:^(AVUser *user, NSError *error) {
+        if (user != nil) {
+            NSString * string = user.objectId;
+            [[NSUserDefaults standardUserDefaults] setObject:string forKey:@"id"];
+            //登陆成功，，传值并推送
+            [self.navigationController popViewControllerAnimated:YES];
+        }else{
+            //sasa
+        }
+        
+    }];
+    
+    
+    
+    
     
     
     
