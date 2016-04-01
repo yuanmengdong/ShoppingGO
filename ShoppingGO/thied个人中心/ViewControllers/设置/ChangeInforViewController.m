@@ -169,12 +169,15 @@
 }
 -(void)action_finishButton{
     
-    AVObject * user = [[AVObject alloc] initWithClassName:@"_user"];
-    [user setObject:self.username.text forKey:@"nickname"];
+
+    AVUser * user = [AVUser currentUser];
+
+    [user setObject:self.usernametext.text forKey:@"nickname"];
     [user setObject:self.gendertext.text forKey:@"gender"];
     [user setObject:self.phonetext.text forKey:@"phone"];
     [user setObject:self.signtext.text forKey:@"signature"];
     [user saveInBackground];
+
     
     //上传数据
     
