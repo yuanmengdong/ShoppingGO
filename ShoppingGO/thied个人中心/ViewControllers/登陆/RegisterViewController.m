@@ -12,9 +12,9 @@
 @interface RegisterViewController ()<UITextFieldDelegate>
 @property(nonatomic,strong)UITextField * userPhone;
 
-@property(nonatomic,strong)UITextField * verifynumber;
+@property(nonatomic,strong)UITextField * passWordnumber;
 
-@property(nonatomic,strong)UIButton * verifyButton;
+@property(nonatomic,strong)UIButton * passWordButton;
 
 @property(nonatomic,strong)UIButton * registerButton;
 
@@ -32,6 +32,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self initializeUserInterface];
+
+    
+}
+
+#pragma mark--private
+-(void)initializeUserInterface{
     
     self.view.backgroundColor=[UIColor colorWithWhite:0.800 alpha:1.000];
     self.navigationController.navigationBarHidden=YES;
@@ -43,27 +50,61 @@
     
     [self.view addSubview:self.userPhone];
     
-    [self.view addSubview:self.verifynumber];
+    [self.view addSubview:self.passWordnumber];
     
     [self.view addSubview:self.back];
     [self.view addSubview:self.registerButton];
     
+    
+    
+}
+-(void)dismissAlert{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(void)alert:(NSString * )str{
+    
+    
+    UIAlertController * alert=[UIAlertController  alertControllerWithTitle:@"温馨提示" message:str preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction * action=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        
+    }];
+    
+    [alert addAction:action];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+    
 }
 #pragma mark--action
 
--(void)action_backLogin{
+-(void)action_registerFinish{
     AVObject * User = [AVObject objectWithClassName:@"_User"];
+    
     [User setObject:self.userPhone.text forKey:@"username"];
-    [User setObject:self.verifynumber.text forKey:@"password"];
+    
+    [User setObject:self.passWordnumber.text forKey:@"password"];
+    
     [User saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             
-            NSDictionary * dictionary = @{@"nameTextField": self.userPhone.text , @"passwordTextField": self.verifynumber.text};
+            NSDictionary * dictionary = @{@"nameTextField": self.userPhone.text , @"passwordTextField": self.passWordnumber.text};
             [[NSNotificationCenter defaultCenter] postNotificationName:@"changeTextField" object:nil userInfo:dictionary];
-            [self.navigationController popViewControllerAnimated:YES];
+            
+            UIAlertController * alert=[UIAlertController  alertControllerWithTitle:@"温馨提示" message: @"注册成功！"preferredStyle:UIAlertControllerStyleAlert];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+            
+            [self performSelector:@selector(dismissAlert) withObject:nil afterDelay:1];
+            
+
         }
         else{
-            NSLog(@"失败");
+            [self alert:@"注册失败!！"];
         }
     }];
     
@@ -125,77 +166,42 @@
     
     return _userPhone;
 }
--(UITextField *)verifynumber{
-    if (!_verifynumber) {
+-(UITextField *)passWordnumber{
+    if (!_passWordnumber) {
         
-        _verifynumber=({
+        _passWordnumber=({
             
-            UITextField * verify=[[UITextField alloc]initWithFrame:CGRectMake(0, 0, 300, 40)];
+            UITextField * passWord=[[UITextField alloc]initWithFrame:CGRectMake(0, 0, 300, 40)];
             
 //            verify.textColor=[UIColor whiteColor];
             
-            verify.placeholder=@"请输入验证码";
+            passWord.placeholder=@"请输入密码";
             
-            verify.font=[UIFont systemFontOfSize:18];
+            passWord.font=[UIFont systemFontOfSize:18];
             
-            verify.layer.cornerRadius=10;
+            passWord.layer.cornerRadius=10;
             
-            verify.delegate=self;
+            passWord.delegate=self;
             
-            verify.layer.borderColor=[UIColor colorWithWhite:0.400 alpha:1.000].CGColor;
+            passWord.layer.borderColor=[UIColor colorWithWhite:0.400 alpha:1.000].CGColor;
             
-            verify.layer.borderWidth=1.5;
+            passWord.layer.borderWidth=1.5;
             
-            verify.borderStyle=UITextBorderStyleNone;
+            passWord.borderStyle=UITextBorderStyleNone;
             
-            verify.center=CGPointMake(self.view.center.x, self.view.bounds.size.height* 0.68);
+            passWord.center=CGPointMake(self.view.center.x, self.view.bounds.size.height* 0.68);
             
-            verify.clearButtonMode=UITextFieldViewModeAlways;
+            passWord.clearButtonMode=UITextFieldViewModeAlways;
             
-            verify;
+            passWord;
             
         });
         
         
     }
-    return _verifynumber;
+    return _passWordnumber;
 }
-//-(UIButton *)verifyButton{
-//    if (!_verifyButton) {
-//        _verifyButton=({
-//            UIButton * button=[UIButton buttonWithType:UIButtonTypeCustom];
-//            
-//            button.frame=CGRectMake(0, 0, 200, 40);
-//            
-//            button.center=CGPointMake(self.view.center.x-45, self.view.bounds.size.height* 0.615);
-//            
-//            button.layer.cornerRadius=10;
-//            
-////            button.layer.borderColor=[UIColor colorWithRed:0.502 green:0.000 blue:0.502 alpha:1.000].CGColor;
-////            
-////            button.layer.borderWidth=2;
-//            
-//            [button setTitle:@"获取验证码" forState:UIControlStateNormal];
-//            
-//            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//            
-//            button.backgroundColor=[UIColor orangeColor];
-//            
-//            [button addTarget:self action:@selector(action_verifybutton) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            
-//            
-//            button;
-//            
-//            
-//        });
-//    }
-//    
-//    
-//    
-//    
-//    return _verifyButton;
-//}
+
 -(UIButton *)registerButton{
     if (!_registerButton) {
         _registerButton=({
@@ -216,7 +222,7 @@
             
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             
-            [button addTarget:self action:@selector(action_backLogin) forControlEvents:UIControlEventTouchUpInside];
+            [button addTarget:self action:@selector(action_registerFinish) forControlEvents:UIControlEventTouchUpInside];
             
             
             

@@ -97,14 +97,14 @@
     
     AuthorizationViewController * login=[[AuthorizationViewController alloc]initWithNibName:@"AuthorizationViewController" bundle:nil];
     
-    [self presentViewController:login animated:YES completion:nil];
+    [self.navigationController pushViewController:login animated:YES];
 }
 -(void)action_infobutton{
     
     ChangeInforViewController * change=[[ChangeInforViewController alloc]init];
     
     
-    [self presentViewController:change animated:YES completion:nil];
+    [self.navigationController pushViewController:change animated:YES];
     
 }
 -(void)action_outLoginbutton{
@@ -125,7 +125,7 @@
     
     AboutWeViewController * about=[[AboutWeViewController alloc]init];
     
-     [self presentViewController:about animated:YES completion:nil];
+    [self.navigationController pushViewController:about animated:YES];
     
     
     

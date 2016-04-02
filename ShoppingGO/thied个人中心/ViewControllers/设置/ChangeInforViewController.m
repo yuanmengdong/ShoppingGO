@@ -30,7 +30,29 @@
 @end
 
 @implementation ChangeInforViewController
-
+#pragma mark--life cycle
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    AVQuery * query=[AVQuery queryWithClassName:@"_User"];
+    
+    NSString * Id=[[NSUserDefaults standardUserDefaults]objectForKey:@"id"];
+    
+    
+    [query getObjectInBackgroundWithId:Id block:^(AVObject *object, NSError *error) {
+  
+            
+        self.usernametext.text=object[@"nickname"];
+        
+        self.gendertext.text=object[@"gender"];
+        
+        self.phonetext.text=object[@"phone"];
+        
+        self.signtext.text=object[@"signature"];
+    }];
+    
+ }
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -137,10 +159,32 @@
     
     
 }
+-(void)dismissAlert{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(void)alert:(NSString * )str{
+    
+    
+    UIAlertController * alert=[UIAlertController  alertControllerWithTitle:@"温馨提示" message:str preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction * action=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        
+    }];
+    
+    [alert addAction:action];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+    
+}
 #pragma mark--override
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
     
-    if (textView.text.length<40) {
+    if (textView.text.length<80) {
         return YES;
     }else{
         return NO;
@@ -162,30 +206,50 @@
 #pragma  mark--action
 -(void)action_button{
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
     
     
     
 }
+
 -(void)action_finishButton{
     
 
     AVUser * user = [AVUser currentUser];
-
     [user setObject:self.usernametext.text forKey:@"nickname"];
+    
     [user setObject:self.gendertext.text forKey:@"gender"];
+    
     [user setObject:self.phonetext.text forKey:@"phone"];
+    
     [user setObject:self.signtext.text forKey:@"signature"];
+    
     [user saveInBackground];
+    
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            
+            UIAlertController * alert=[UIAlertController  alertControllerWithTitle:@"温馨提示" message: @"保存成功！"preferredStyle:UIAlertControllerStyleAlert];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+            
+            [self performSelector:@selector(dismissAlert) withObject:nil afterDelay:1];
+            
+         
+        }
+        else{
+            [self alert:@"保存失败！请重新输入！"];
+        }
+    }];
 
-    
-    //上传数据
-    
-    
+
+   
     
     
 }
+
 #pragma mark--getter
+
 -(UIButton * )back{
     if (!_back) {
         _back=({

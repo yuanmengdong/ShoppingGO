@@ -20,6 +20,7 @@
 @property NSArray <UIView *> * iarray;
 @property (nonatomic, retain) UIImageView * head;
 @property (nonatomic, retain) NSMutableArray <UIButton *> * array;
+@property (nonatomic, retain) UIView * ziliao;
 
 
 

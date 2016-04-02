@@ -7,6 +7,8 @@
 //
 
 #import "PersonalViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
+
 #import "LoginViewController.h"
 #import "SettingViewController.h"
 #import "animation.h"
@@ -14,7 +16,16 @@
 #import "newHead.h"
 
 @interface PersonalViewController ()<UITableViewDataSource, UITableViewDelegate, UINavigationBarDelegate, UIPickerViewDelegate>
+
+@property(nonatomic,strong)UITextView * userText;
+
+@property(nonatomic,strong)UITextView * genderText;
+
+@property(nonatomic,strong)UITextView * phoneText;
+
 @property(nonatomic,strong)UIButton * button;
+
+
 @end
 
 @implementation PersonalViewController
@@ -30,6 +41,9 @@
     self = [super init];
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeLabelText:) name:@"change" object:nil];
+        
+         
+        
     }
     return self;
 }
@@ -48,9 +62,9 @@
     self.zhanshi.tag = 1;
     self.shoucang.tag = 2;
     
-    Ziliao * ziliao = [[Ziliao alloc] init];
+//    Ziliao * ziliao = [[Ziliao alloc] init];
     
-    self.iarray = @[self.huanying, self.zhanshi, ziliao.ziliao, self.shoucang];
+    self.iarray = @[self.huanying, self.zhanshi, self.ziliao, self.shoucang];
     
     
     
@@ -347,19 +361,6 @@
         _zhanshi.center = CGPointMake(CGRectGetMidX(self.card.bounds), CGRectGetMidY(self.card.bounds) + 90);
         _zhanshi.backgroundColor = [UIColor redColor];
         
-        UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.card.bounds.size.width - 40, self.card.bounds.size.height - 220)];
-        //        view.center = CGPointMake(CGRectGetMidX(self.card.bounds), CGRectGetMidY(self.card.bounds) + 90);
-        UITextView * text = [[UITextView alloc] init];
-        text.bounds = CGRectMake(0, 0, 200, 300);
-        text.center = view.center;
-        text.text = @"My way or no way";
-        text.font = [UIFont fontWithName:@"STHeitiSC-Medium" size:16];
-        text.textAlignment = NSTextAlignmentCenter;
-        text.bounds = CGRectMake(0, 0, 200, text.contentSize.height);
-        text.backgroundColor = [UIColor clearColor];
-        view.backgroundColor = [UIColor redColor];
-        [view addSubview:text];
-        [_zhanshi addSubview:view];
         
     }
     
@@ -388,13 +389,7 @@
     if (!_huanying) {
         _huanying = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.card.bounds.size.width - 40, self.card.bounds.size.height - 220)];
         _huanying.center = CGPointMake(CGRectGetMidX(self.card.bounds), CGRectGetMidY(self.card.bounds) + 90);
-        UITextView * text = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, self.card.bounds.size.width - 40, self.card.bounds.size.height - 220)];
-        text.textAlignment = NSTextAlignmentCenter;
-        
-        text.font = [UIFont fontWithName:@"STHeitiSC-Medium" size:20];
-        text.text = @"\n\n\n\n\n欢迎回来，***";
-        //        text.backgroundColor = [UIColor redColor];
-        [_huanying addSubview:text];
+    
         
         
     }
@@ -434,10 +429,92 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated
-{if ([self.view subviews].count < 6) {
+
+{
+    
+    UITextView * texthuanying = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, self.card.bounds.size.width - 40, self.card.bounds.size.height - 220)];
+    texthuanying.textAlignment = NSTextAlignmentCenter;
+    
+    texthuanying.font = [UIFont fontWithName:@"STHeitiSC-Medium" size:20];
+    
+    
+    UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.card.bounds.size.width - 40, self.card.bounds.size.height - 220)];
+    //        view.center = CGPointMake(CGRectGetMidX(self.card.bounds), CGRectGetMidY(self.card.bounds) + 90);
+    UITextView * text = [[UITextView alloc] init];
+    text.bounds = CGRectMake(0, 0, 200, 300);
+    text.center = view.center;
+    AVQuery * query=[AVQuery queryWithClassName:@"_User"];
+    
+    NSString * Id=[[NSUserDefaults standardUserDefaults]objectForKey:@"id"];
+    
+    
+    [query getObjectInBackgroundWithId:Id block:^(AVObject *object, NSError *error) {
+        texthuanying.text = [NSString stringWithFormat:@"%@%@",@"\n\n\n\n\n欢迎回来，",object[@"nickname"]];
+        //        text.backgroundColor = [UIColor redColor];
+        [_huanying addSubview:texthuanying];
+        
+
+        text.text = object[@"signature"];
+    }];
+    
+    text.font = [UIFont fontWithName:@"STHeitiSC-Medium" size:16];
+    text.textAlignment = NSTextAlignmentCenter;
+    text.bounds = CGRectMake(0, 0, 200, text.contentSize.height);
+    text.backgroundColor = [UIColor clearColor];
+    view.backgroundColor = [UIColor redColor];
+    [view addSubview:text];
+    [_zhanshi addSubview:view];
+
+    
+    for (int i = 0; i < 6; i ++) {
+        UITextView * text = [[UITextView alloc] initWithFrame:CGRectMake(50, 90 + i / 2 * 70, 110, 40)];
+        if (i % 2 == 1) {
+            text.frame = CGRectMake(50 + _ziliao.bounds.size.width / 2, 90 + i / 2 * 70, 110, 40);
+        }
+        text.text = @"12345678901";
+        
+        text.font = [UIFont fontWithName:@"STHeitiSC-Medium" size:16];
+        
+        text.tag = 300 + i;
+        
+        AVQuery * query=[AVQuery queryWithClassName:@"_User"];
+        
+        NSString * Id=[[NSUserDefaults standardUserDefaults]objectForKey:@"id"];
+        
+        
+        [query getObjectInBackgroundWithId:Id block:^(AVObject *object, NSError *error) {
+            
+            if (text.tag==300) {
+                
+                text.text = object[@"nickname"];
+                
+            }else if (text.tag==301){
+                text.text =   object[@"gender"];
+                
+            }else if (text.tag==302){
+                
+                text.text =  object[@"phone"];
+            }
+            
+            
+            
+            
+            
+        }];
+        
+        
+        
+        
+        [_ziliao addSubview:text];
+    }
+    
+
+    
+//
+     if ([self.view subviews].count < 6) {
     UIView * view = [[UIView alloc] init];
     [self.view addSubview:view];
-}
+    }
     if ([self.view subviews].count == 6) {
         
         [self performSelector:@selector(beginButton:) withObject:self.button afterDelay:1.0f];
@@ -450,6 +527,33 @@
         self.view.alpha = 1;
         [UIView commitAnimations];
     }
+}
+
+- (UIView *)ziliao
+{
+    if ( !_ziliao)
+    {
+        
+        _ziliao = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width - 50 - 40, self.view.bounds.size.height - 140 - 220)];
+        _ziliao.center = CGPointMake(CGRectGetMidX(self.view.bounds) - 25, (self.view.bounds.size.height - 140) / 2  + 90);
+        _ziliao.tag=100;
+        _ziliao.backgroundColor = [UIColor clearColor];
+        
+        NSArray * array = @[@"昵称:", @"性别:", @"电话:", @"城市:", @"企鹅:", @"生日:"];
+        
+        for (int i = 0; i < 6; i ++) {
+            UITextView * text = [[UITextView alloc] initWithFrame:CGRectMake(10, 90 + i / 2 * 70, 50, 40)];
+            if (i % 2 == 1) {
+                text.frame = CGRectMake(10 + _ziliao.bounds.size.width / 2, 90 + i / 2 * 70, 90, 40);
+            }
+            text.text = array[i];
+            text.font = [UIFont fontWithName:@"STHeitiSC-Medium" size:16];
+            text.tag = 200 + i;
+            [_ziliao addSubview:text];
+        }
+       
+    }
+    return _ziliao;
 }
 
 @end

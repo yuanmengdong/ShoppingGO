@@ -7,14 +7,27 @@
 //
 
 #import "Ziliao.h"
-
+#import <AVOSCloud/AVOSCloud.h>
 @interface Ziliao ()
 
+@property(nonatomic,strong)UITextView * currenttextView;
 
 @end
 
 @implementation Ziliao
+#pragma mark--life cycle
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
 
+    
+
+    
+    
+    
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -22,7 +35,7 @@
 
 - (UIView *)ziliao
 {
-    if (!_ziliao)
+    if (_ziliao)
     {
         
         _ziliao = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width - 50 - 40, self.view.bounds.size.height - 140 - 220)];
@@ -50,18 +63,31 @@
             text.text = @"12345678901";
             text.font = [UIFont fontWithName:@"STHeitiSC-Medium" size:16];
             text.tag = 300 + i;
+            AVQuery * query=[AVQuery queryWithClassName:@"_User"];
+            
+            NSString * Id=[[NSUserDefaults standardUserDefaults]objectForKey:@"id"];
+            
+            
+            [query getObjectInBackgroundWithId:Id block:^(AVObject *object, NSError *error) {
+                if (text.tag==300) {
+                    
+                    text.text=object[@"nickname"];
+                    
+                }else if (text.tag==301){
+                    
+                    text.text=object[@"gender"];
+                    
+                }else if (text.tag==302){
+                    
+                    
+                   text.text=object[@"phone"];
+                    
+                }
+                
+            }];
             [_ziliao addSubview:text];
         }
-//        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-//        button.frame = CGRectMake(0, 0, 220, 40);
-//        button.center = CGPointMake(CGRectGetMidX(_ziliao.bounds), CGRectGetMaxY(_ziliao.bounds) - 70);
-//        [button setTitle: @"编     辑" forState: UIControlStateNormal];
-//        button.backgroundColor = [UIColor cyanColor];
-//        button.layer.cornerRadius = 20;
-//        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        [button addTarget:self action:@selector(button) forControlEvents:UIControlEventTouchUpInside];
-//        
-//        [self.ziliao addSubview:button];
+
     }
     return _ziliao;
 }

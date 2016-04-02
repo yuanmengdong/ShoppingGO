@@ -27,10 +27,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self initializeUserInterface];
+    
+}
+#pragma mark--private
+-(void)initializeUserInterface{
+    
     self.view.backgroundColor=[UIColor cyanColor];
     self.tableView.dataSource=self;
     self.tableView.delegate=self;
-   
+    
     UIButton *  button=[UIButton buttonWithType:UIButtonTypeCustom];
     button.frame=CGRectMake(0, 0, 100, 40);
     button.center=CGPointMake(60, 60);
@@ -43,13 +49,14 @@
     [button addTarget:self action:@selector(action_button) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:button];
-self.cellstr=@"已授权";
+    self.cellstr=@"已授权";
+    
     
 }
 #pragma  mark--action
 -(void)action_button{
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
     
     
     

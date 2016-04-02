@@ -27,12 +27,14 @@
 @end
 
 @implementation LoginViewController
+#pragma mark--dealloc
+-(void)dealloc{
+//    第三步：移除通知
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:@"changeTextField" object:nil];
+    
+}
 
-//{
-//    //第三步：移除通知
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"changeTextField" object:nil];
-//}
-
+#pragma mark--init
 - (instancetype)init
 {
     self = [super init];
@@ -42,14 +44,17 @@
     return self;
 }
 
--(void)changeLabelText:(NSNotification *)notification{
-    self.name.text = notification.userInfo[@"nameTextField"];
-    self.password.text = notification.userInfo[@"passwordTextField"];
-}
-
+#pragma mark--life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self initializaUserInterface];
+    
+
+}
+#pragma mark--private
+-(void)initializaUserInterface{
+    
     self.view.backgroundColor=[UIColor whiteColor];
     self.navigationController.navigationBarHidden=YES;
     
@@ -66,20 +71,52 @@
     
     [self.view addSubview:self.registerButton];
     
-
+    
+    
+    
+    
 }
+-(void)dismissAlert{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(void)alert:(NSString * )str{
+    
+    
+    UIAlertController * alert=[UIAlertController  alertControllerWithTitle:@"温馨提示" message:str preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction * action=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        
+    }];
+    
+    [alert addAction:action];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+    
+}
+
 #pragma mark--action
 -(void)action_loginbutton{
     
-    //登陆
+    
     [AVUser logInWithUsernameInBackground:self.name.text password:self.password.text block:^(AVUser *user, NSError *error) {
         if (user != nil) {
             NSString * string = user.objectId;
             [[NSUserDefaults standardUserDefaults] setObject:string forKey:@"id"];
-            //登陆成功，，传值并推送
-            [self.navigationController popViewControllerAnimated:YES];
+            
+            UIAlertController * alert=[UIAlertController  alertControllerWithTitle:@"温馨提示" message: @"登陆成功！"preferredStyle:UIAlertControllerStyleAlert];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+            
+            [self performSelector:@selector(dismissAlert) withObject:nil afterDelay:1];
+            
+
         }else{
-            //sasa
+            [self alert:@"请输入正确用户名&密码"];
         }
         
     }];
@@ -88,8 +125,7 @@
     
     
     
-    //登陆成功，，传值并推送
-    [self.navigationController popViewControllerAnimated:YES];
+
     
     
     
@@ -107,6 +143,16 @@
     
     
 }
+
+
+-(void)changeLabelText:(NSNotification *)notification{
+    
+    self.name.text = notification.userInfo[@"nameTextField"];
+    
+    self.password.text = notification.userInfo[@"passwordTextField"];
+    
+}
+
 #pragma mark--delegate
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     
